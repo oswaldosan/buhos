@@ -3,9 +3,12 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link'
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const phoneNumber = "50433363789"
+  const whatsappUrl = `https://wa.me/${phoneNumber}`
 
   useEffect(() => {
     setIsLoaded(true);
@@ -41,16 +44,14 @@ export default function Home() {
           <p className="text-xl md:text-2xl mb-8 text-gray-300">
             Internet Experts - Transforming Ideas into Digital Reality
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              window.open(`mailto:oswaldo@buhosdigital.com`, '_blank');
-            }}
+          <Link
+            href={whatsappUrl}
             className="bg-[#ffbb00] text-[#061c2e] px-8 py-3 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Get Started
-          </motion.button>
+          </Link>
         </motion.div>
 
         {/* Animated background elements */}
