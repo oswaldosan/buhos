@@ -26,7 +26,6 @@ const clients: Client[] = [
 ]
 
 export default function HappyClients() {
-  const [width, setWidth] = useState(0)
   const [dupeCount, setDupeCount] = useState(2)
 
   useEffect(() => {
