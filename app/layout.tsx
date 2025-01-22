@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.css';
+import { jsonLd } from './metadata';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700', '900'],
@@ -61,6 +62,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />

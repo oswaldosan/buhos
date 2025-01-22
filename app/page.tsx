@@ -6,41 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link'
 import HappyClients from './components/HappyClients';
 
-export const generateMetadata = () => {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Búhos Digital',
-    description: 'Internet Experts - Transforming Ideas into Digital Reality',
-    url: 'https://buhosdigital.com',
-    logo: 'https://buhosdigital.com/logo.png',
-    sameAs: [
-      // Add your social media URLs here
-      'https://linkedin.com/company/buhos-digital',
-      'https://twitter.com/buhosdigital',
-    ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+50433363789',
-      contactType: 'customer service',
-    },
-    serviceType: [
-      'Web Development',
-      'DevOps & Infrastructure',
-      'Mobile Development',
-      'Technical SEO',
-      'Cloud Solutions',
-      'System Architecture',
-    ],
-  }
-
-  return {
-    other: {
-      'script:ld+json': JSON.stringify(jsonLd),
-    },
-  }
-}
-
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   const phoneNumber = "50433363789"
