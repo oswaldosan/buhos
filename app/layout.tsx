@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.css';
 
@@ -9,8 +9,48 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Búhos Digital',
-  description: 'Internet Experts - Transforming Ideas into Digital Reality',
+  title: 'Búhos Digital | Internet Experts & Technical Solutions',
+  description: 'From concept to deployment, we craft cutting-edge digital solutions that empower businesses to thrive in the modern tech landscape. Experts in Web Development, DevOps, Cloud Solutions, and System Architecture.',
+  keywords: 'web development, devops, cloud solutions, system architecture, technical seo, mobile development, digital transformation, software development, Honduras tech, Latin America development',
+  openGraph: {
+    title: 'Búhos Digital | Internet Experts & Technical Solutions',
+    description: 'Transforming Ideas into Digital Reality - Full spectrum digital transformation and technical solutions.',
+    url: 'https://buhosdigital.com',
+    siteName: 'Búhos Digital',
+    images: [
+      {
+        url: '/og-image.png', // Make sure to add this image to your public folder
+        width: 1200,
+        height: 630,
+        alt: 'Búhos Digital - Technical Solutions',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Búhos Digital | Internet Experts',
+    description: 'Transforming Ideas into Digital Reality - Full spectrum digital transformation and technical solutions.',
+    images: ['/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your Google verification code
+  },
+  alternates: {
+    canonical: 'https://buhosdigital.com',
+  },
 };
 
 export default function RootLayout({
