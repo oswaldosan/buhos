@@ -27,19 +27,9 @@ const contactInfo = [
   },
 ];
 
-const InstagramIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" width={16} height={16}>
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
-  </svg>
-);
-
-const LinkedinIcon = () => (
+const FacebookIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" width={16} height={16}>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 
@@ -50,9 +40,8 @@ const GithubIcon = () => (
 );
 
 const socialLinks = [
-  { Icon: InstagramIcon, href: 'https://instagram.com/buhosdigital', label: 'Instagram' },
-  { Icon: LinkedinIcon, href: 'https://linkedin.com/company/buhosdigital', label: 'LinkedIn' },
-  { Icon: GithubIcon, href: 'https://github.com/buhosdigital', label: 'GitHub' },
+  { Icon: FacebookIcon, href: 'https://www.facebook.com/buhoshn/', label: 'Facebook' },
+  { Icon: GithubIcon, href: 'https://github.com/oswaldosan', label: 'GitHub' },
 ];
 
 type Status = 'idle' | 'sending' | 'success' | 'error';

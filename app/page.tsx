@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Globe, Server, Smartphone, Search, Cloud, Cpu } from 'lucide-react';
+import { Globe, Server, Smartphone, Cpu, Mail, ShieldCheck } from 'lucide-react';
 import HappyClients from './components/HappyClients';
 import Portfolio from './components/Portfolio';
+import Founder from './components/Founder';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -14,33 +15,45 @@ import Navbar from './components/Navbar';
 const services = [
   {
     icon: Globe,
-    title: 'Web Development',
-    description: 'Full-stack web applications built with Next.js, React, Node.js, and modern cloud infrastructure.',
+    title: 'Websites & Web Apps',
+    tagline: 'Your business, online and working 24/7',
+    description: 'We build fast, polished, and reliable websites that represent your brand and convert visitors into clients. From landing pages to complex web platforms — every detail is intentional.',
+    tags: ['Next.js & React', 'Mobile-first', 'SEO-ready'],
   },
   {
     icon: Server,
     title: 'DevOps & Infrastructure',
-    description: 'Cloud architecture, CI/CD pipelines, containerization with Docker, and Kubernetes orchestration.',
+    tagline: 'Ships on time. Runs without drama.',
+    description: "Automated deployments, CI/CD pipelines, and containerized infrastructure so your product reaches users fast — and stays up. We handle the ops so you don't have to.",
+    tags: ['Docker & Kubernetes', 'Zero downtime', 'CI/CD pipelines'],
   },
   {
     icon: Smartphone,
-    title: 'Mobile Development',
-    description: 'Native and cross-platform mobile applications using React Native and Flutter.',
-  },
-  {
-    icon: Search,
-    title: 'Technical SEO',
-    description: 'Performance optimization, core web vitals improvement, and search engine optimization for technical platforms.',
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud Solutions',
-    description: 'AWS, Azure, and GCP infrastructure design, implementation, and management with scalability focus.',
+    title: 'Mobile Apps — iOS & Android',
+    tagline: 'In your users\' pockets',
+    description: 'Native and cross-platform apps published to the App Store and Google Play. Built for real users, tested on real devices — with the performance and polish your audience expects.',
+    tags: ['React Native', 'App Store & Play Store', 'iOS & Android'],
   },
   {
     icon: Cpu,
     title: 'System Architecture',
-    description: 'Microservices design, distributed systems, and enterprise-level software architecture solutions.',
+    tagline: 'Built to scale from day one',
+    description: 'Clean APIs, solid microservices, and smart data flows designed for growth. No technical debt, no surprises when traffic spikes — just systems that work the way they should.',
+    tags: ['Microservices', 'API design', 'Scalable by default'],
+  },
+  {
+    icon: Mail,
+    title: 'Email Solutions',
+    tagline: 'Emails that actually arrive',
+    description: 'Transactional flows, marketing campaigns, and deliverability audits. We configure SPF, DKIM, DMARC and integrate with the right providers so your emails land in inboxes — not spam.',
+    tags: ['Transactional & marketing', '99%+ deliverability', 'Brevo / SendGrid'],
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Cloud & Security',
+    tagline: 'Secure, fast, and always on',
+    description: 'AWS, GCP, and Azure deployments built security-first. Proper IAM roles, encrypted data, automated backups, and monitoring — so you sleep well knowing your platform is protected.',
+    tags: ['AWS / GCP / Azure', 'Security-first', '24/7 monitoring'],
   },
 ];
 
@@ -266,14 +279,32 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-16"
+              className="text-center mb-6"
             >
               <span className="text-xs font-semibold tracking-[0.2em] text-[#ffbb00] uppercase mb-4 block">
                 What We Do
               </span>
               <h2 className="text-4xl md:text-5xl font-bold">
-                Technical <span className="text-[#ffbb00]">Solutions</span>
+                Solutions That <span className="text-[#ffbb00]">Deliver</span>
               </h2>
+              <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-base leading-relaxed">
+                We don&apos;t just write code — we build products you can trust. Clean work, clear communication, and technology that actually solves the problem.
+              </p>
+            </motion.div>
+
+            {/* Trust signals */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-wrap justify-center gap-3 mb-14"
+            >
+              {['On-time delivery', 'Clean & documented code', 'Responsive communication', 'Post-launch support'].map((signal) => (
+                <span key={signal} className="text-xs text-gray-400 border border-white/10 bg-white/[0.03] px-4 py-1.5 rounded-full">
+                  ✓ {signal}
+                </span>
+              ))}
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -286,17 +317,26 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.08, duration: 0.5 }}
-                    className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] hover:bg-white/[0.06] hover:border-[#ffbb00]/20 hover:-translate-y-1 transition-all duration-300"
+                    className="group relative flex flex-col p-6 rounded-2xl bg-white/[0.03] border border-white/[0.07] hover:bg-white/[0.06] hover:border-[#ffbb00]/20 hover:-translate-y-1 transition-all duration-300"
                   >
                     {/* Left accent bar */}
                     <div className="absolute left-0 top-6 bottom-6 w-0.5 bg-[#ffbb00]/30 rounded-full group-hover:bg-[#ffbb00]/70 transition-colors duration-300" />
 
-                    <div className="pl-4">
+                    <div className="pl-4 flex flex-col h-full">
                       <div className="w-10 h-10 rounded-xl bg-[#ffbb00]/10 flex items-center justify-center mb-4 group-hover:bg-[#ffbb00]/20 transition-colors duration-300">
                         <Icon size={18} className="text-[#ffbb00]" />
                       </div>
-                      <h3 className="text-white font-semibold text-base mb-2">{service.title}</h3>
-                      <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
+                      <h3 className="text-white font-bold text-base mb-1">{service.title}</h3>
+                      <p className="text-[#ffbb00]/70 text-xs font-medium mb-3">{service.tagline}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed mb-5">{service.description}</p>
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {service.tags.map((tag) => (
+                          <span key={tag} className="text-[10px] text-gray-500 border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 rounded-full tracking-wide">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </motion.div>
                 );
@@ -307,6 +347,9 @@ export default function Home() {
 
         {/* ── Portfolio ── */}
         <Portfolio />
+
+        {/* ── Founder ── */}
+        <Founder />
 
         {/* ── Contact ── */}
         <Contact />

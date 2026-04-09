@@ -99,6 +99,20 @@ const projects: Project[] = [
     logo: '/logos/cm.webp',
   },
   {
+    name: 'Hontex Gutters',
+    description: 'Corporate website for a Texas-based gutter installation and repair company, with free estimate CTA.',
+    category: 'Web',
+    url: 'https://hontexgutters.com',
+    logo: '/logos/logohontexgutters.png',
+  },
+  {
+    name: 'Patronato Monterrey',
+    description: 'Transparency portal for a community civic board — tracks donations, expenses, and project progress in real time.',
+    category: 'Web App',
+    url: 'https://monterreycholoma.com',
+    logo: '/logos/logopatronatomonterrey.png',
+  },
+  {
     name: 'Kit2Pay',
     description: 'Invoice & quote management SaaS for events and rental businesses — multi-role platform.',
     category: 'SaaS',
@@ -133,7 +147,7 @@ export default function Portfolio() {
             Selected <span className="text-[#ffbb00]">Projects</span>
           </h2>
           <p className="mt-4 text-gray-400 max-w-xl mx-auto text-base leading-relaxed">
-            A snapshot of digital products we&apos;ve designed, built, and shipped for clients across the Caribbean.
+            A snapshot of digital products we&apos;ve designed, built, collaborated &amp; shipped for clients across the Caribbean, Central America, and the USA.
           </p>
         </motion.div>
 
