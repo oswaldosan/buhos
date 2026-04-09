@@ -16,8 +16,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex items-center gap-2.5">
             <Image src="/logo.png" alt="Búhos Digital" width={28} height={28} className="rounded-sm opacity-80" />
-            <span className="text-sm font-semibold text-gray-400">
-              <span className="text-[#ffbb00]">Búhos</span> Digital
+            <span className="flex flex-col leading-none gap-0.5">
+              <span className="text-sm font-semibold text-gray-400">
+                <span className="text-[#ffbb00]">Búhos</span> Digital
+              </span>
+              <span className="text-[9px] text-gray-600 tracking-[0.15em]">by Tony Sanchez</span>
             </span>
           </div>
 

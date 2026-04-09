@@ -229,9 +229,19 @@ export default function Home() {
             </motion.span>
 
             {/* Headline */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-3 tracking-tight">
               <span className="text-[#ffbb00]">Búhos</span> Digital
             </h1>
+            <p className="text-gray-500 text-sm tracking-[0.2em] mb-6">
+              by{' '}
+              <a
+                href="#founder"
+                onClick={(e) => { e.preventDefault(); document.querySelector('#founder')?.scrollIntoView({ behavior: 'smooth' }); }}
+                className="text-gray-400 hover:text-[#ffbb00] transition-colors duration-200 cursor-pointer"
+              >
+                Tony Sanchez
+              </a>
+            </p>
 
             {/* Sub-headline */}
             <p className="text-lg md:text-xl text-gray-300 font-light mb-6 max-w-xl mx-auto leading-relaxed">

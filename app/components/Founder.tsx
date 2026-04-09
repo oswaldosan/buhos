@@ -27,7 +27,7 @@ const TwitterIcon = () => (
 
 export default function Founder() {
   return (
-    <section className="py-24 bg-[#061c2e]">
+    <section id="founder" className="py-24 bg-[#061c2e]">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ export default function Founder() {
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-start justify-between gap-4 mb-1">
                 <div>
-                  <h3 className="text-white text-xl font-bold">Oswaldo Sanchez</h3>
+                  <h3 className="text-white text-xl font-bold">Oswaldo Antonio Sanchez L. <span className="text-gray-500 font-normal text-base">(AKA Tony)</span></h3>
                   <p className="text-[#ffbb00]/80 text-sm font-medium mt-0.5">Founder &amp; Full Stack Developer</p>
                 </div>
                 {/* Social links */}

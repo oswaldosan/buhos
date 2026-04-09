@@ -52,8 +52,11 @@ export default function Navbar() {
               height={32}
               className="rounded-sm"
             />
-            <span className="font-bold text-white text-sm tracking-wide">
-              <span className="text-[#ffbb00]">Búhos</span> Digital
+            <span className="flex flex-col leading-none">
+              <span className="font-bold text-white text-sm tracking-wide">
+                <span className="text-[#ffbb00]">Búhos</span> Digital
+              </span>
+              <span className="text-[9px] text-gray-500 tracking-[0.15em] font-normal">by Tony Sanchez</span>
             </span>
           </a>
 
